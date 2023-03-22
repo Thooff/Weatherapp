@@ -151,7 +151,15 @@ search-button {
   margin: 0 auto;
 }
 
-.link {
+.github-link {
   display: block;
   margin: 0 auto;
+  text-align: center;
+  color: #ffa726;
+  text-decoration: none;
+  transition: 200ms;
+  
+}
+.github-link:hover {
+  text-decoration: underline;
 }
