@@ -1,5 +1,3 @@
-// ⏰Feature #1
-// In your project, display the current date and time
 let currentTime = new Date();
 
 let hour = currentTime.getHours();
@@ -18,12 +16,6 @@ let day = days[currentTime.getDay()];
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hour}:${minutes}`;
 
-// 🕵️‍♀️Feature #2
-// Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
-
-//🙀Bonus Feature
-//Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
-
 function convert2Celsius(event) {
   event.preventDefault();
   let celsiusElement = document.querySelector("#temperature");
@@ -41,10 +33,6 @@ function convert2Fahrenheit(event) {
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convert2Fahrenheit);
-
-// 👨‍🏫 Your task
-// In your project, when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
-// Please note: there's no need to include a temperature conversion at the moment. This will be taught later on in the course.
 
 function searchCity(event) {
   event.preventDefault();
@@ -81,6 +69,3 @@ function retrievePosition(position) {
 }
 
 navigator.geolocation.getCurrentPosition(retrievePosition);
-
-// 🙀 Bonus point:
-// Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.my ApiKey = "ed200b1f3e2875868d69efc91168b048";
