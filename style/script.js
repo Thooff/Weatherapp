@@ -16,24 +16,6 @@ let day = days[currentTime.getDay()];
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${hour}:${minutes}`;
 
-function convert2Celsius(event) {
-  event.preventDefault();
-  let celsiusElement = document.querySelector("#temperature");
-  celsiusElement.innerHTML = 3;
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convert2Celsius);
-
-function convert2Fahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitElement = document.querySelector("#temperature");
-  fahrenheitElement.innerHTML = 5;
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convert2Fahrenheit);
-
 function searchCity(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#area");
@@ -45,9 +27,9 @@ let searchForm = document.querySelector("#search-button");
 searchForm.addEventListener("submit", searchCity);
 
 function showWeather(response) {
+  let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
-  let p = document.querySelector("#temperature");
-  p.innerHTML = `${temperature}`;
+  temperatureElement.innerHTML = `${temperature}`;
   let place = document.querySelector("#area");
   place.innerHTML = `${response.data.name}`;
 }
